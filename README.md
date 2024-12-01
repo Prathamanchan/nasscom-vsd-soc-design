@@ -213,9 +213,14 @@ Smaller Designs we can run without interactive mode but for larger designs we ne
 # Day 2 : Good floorplan vs bad floorplan and intro to libcells
 A 'Die' which consists of core is small semiconductor material specimen on which fundamental circuit is fabricated.
 In an ideal scenario we prefer utilization factor of 0.5 or 0.6
+
 <img width="523" alt="image" src="https://github.com/user-attachments/assets/911938d1-eac0-4f0d-8dab-789b54573ec2">
 
+** Define Location of preplaced cells (Macros)
+These are IP's readily available in the market. Example Memory, Clock gating cells, Comparator etc. The arrangement of these IPS in a chip is referred as floorplanning. These IP's blocks are placed in chip before automated placement and routing and are called as pre-placed cells. Automated placement and routing tool places the remaining logical cells in the design onto chip.
+Surround pre-placed cells with Decoupling capacitors. These decap cells power the block during switching activity.
 
+Steps to run floorplan using openlane (page 8)
 
 
 
