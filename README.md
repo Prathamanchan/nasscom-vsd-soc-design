@@ -1,35 +1,66 @@
-Digital VLSI SOC Design and Planning
+# Digital VLSI SOC Design and Planning
 
-Course Overview
+# Course Overview
 
-Day 1
-* Familiarization with OpenLane
-* Physical Design (PnR) stages
-* Design Prepeation stages
-* Execution and Analysis of synthesis
+### Day 1: Introduction to OpenLane and Synthesis
 
-Day 2
-* Introduction to Floorplan
-* LEF vs DEF
-* Special Cells
-* Execution and Analysis of Placement
+<details>
+  <summary>Day 1 Topics</summary>
 
-Day 3
-* Standard cell design using sky130 pdk
-* SPICE simulation in ngspice
-* Standard cell characterization
+- **Familiarization with OpenLane**
+- **Physical Design (PnR) stages**
+- **Design Preparation stages**
+- **Execution and Analysis of synthesis**
 
-Day 4
-* PnR with custom cell
-* CTS and STA
-* Timing ECO's
+</details>
 
-Day 5
-* Routing
-* Algorithm behind Trinston Route
-* SPEF Analysis
+### Day 2: Floorplan and Placement
 
-Day 1 : Inception of OpenSource EDA, Openlane and Sky130 PDK
+<details>
+  <summary>Day 2 Topics</summary>
+
+- **Introduction to Floorplan**
+- **LEF vs DEF**
+- **Special Cells**
+- **Execution and Analysis of Placement**
+
+</details>
+
+### Day 3: Standard Cell Design and Simulation
+
+<details>
+  <summary>Day 3 Topics</summary>
+
+- **Standard cell design using sky130 PDK**
+- **SPICE simulation in ngspice**
+- **Standard cell characterization**
+
+</details>
+
+### Day 4: Custom Cell and Timing Analysis
+
+<details>
+  <summary>Day 4 Topics</summary>
+
+- **PnR with custom cell**
+- **CTS and STA**
+- **Timing ECOs**
+
+</details>
+
+### Day 5: Routing and Analysis
+
+<details>
+  <summary>Day 5 Topics</summary>
+
+- **Routing**
+- **Algorithm behind Trinston Route**
+- **SPEF Analysis**
+
+</details>
+
+
+# Day 1 : Inception of OpenSource EDA, Openlane and Sky130 PDK
 
 <img width="359" alt="image" src="https://github.com/user-attachments/assets/cd204ce1-22b8-4874-b087-c1f28368286e">
 
@@ -47,7 +78,7 @@ OpenLane is an automated RTL to GDSII flow. The flow performs full ASIC implemen
 OpenLane is based on several opensource projects such as OpenRoad, magic, klayout, fualt, yosys and Qflow etc.
 Goal of openlane tool is to produce a clean GDSII with no human intervention.
 
-Day1 : Practicals 
+## Day1 : Practicals 
 
 <details>
   <summary>OpenLane Directory Structure</summary>
@@ -164,11 +195,27 @@ ls -ltr
 ```
 
 Screenshot 1 :
+
 <img width="461" alt="image" src="https://github.com/user-attachments/assets/cf377477-7efd-45ea-acbc-95805e451455">
 
 Screenshot 2 :
+
 <img width="476" alt="image" src="https://github.com/user-attachments/assets/cb2443d8-8757-47cf-8130-b921eaa4d59e">
 
+Exercise :
 
-</details>
+<img width="437" alt="image" src="https://github.com/user-attachments/assets/cc2ab4fa-d2f9-4f5d-8aa9-2d629bafb4c1">
+
+
 Smaller Designs we can run without interactive mode but for larger designs we need to explore each and every design to check if everything is meeting the requirement.
+</details>
+
+# Day 2 : Good floorplan vs bad floorplan and intro to libcells
+A 'Die' which consists of core is small semiconductor material specimen on which fundamental circuit is fabricated.
+In an ideal scenario we prefer utilization factor of 0.5 or 0.6
+<img width="523" alt="image" src="https://github.com/user-attachments/assets/911938d1-eac0-4f0d-8dab-789b54573ec2">
+
+
+
+
+
