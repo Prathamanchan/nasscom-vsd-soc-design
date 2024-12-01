@@ -90,6 +90,14 @@ ls
 # xcircuit   : Schematic capture tool and netlist generator.
 # xschem     : Schematic capture tool with SPICE integration.
 # ------------------------------------------------------------------------
+
+```
+</details>
+
+<details>
+  <summary>Working with OpenLane</summary>
+  
+```bash
 cd ~/Desktop/work/tools/openlane_working_dir/openlane
 # ------------------------------------------------------------------------
 # This is the directory where we will be working.
@@ -97,5 +105,10 @@ cd ~/Desktop/work/tools/openlane_working_dir/openlane
 # ------------------------------------------------------------------------
 alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.21'
 docker
+./flow.tcl -interactive
+# The above command will invoke openLane in interactive mode. Without -interactive mode the tool attempts to complete the flow in one run
+# %:Represents openlane terminal
+%package require openlane 0.9
+
 ```
 </details>
