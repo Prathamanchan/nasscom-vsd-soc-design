@@ -32,7 +32,8 @@ Day 5
 Day 1 : Inception of OpenSource EDA, Openlane and Sky130 PDK
 
 <img width="359" alt="image" src="https://github.com/user-attachments/assets/cd204ce1-22b8-4874-b087-c1f28368286e">
-RTL, EDA and PDK are three key ingredients of ASIC Design
+
+RTL, EDA Tools and PDK are three key ingredients of ASIC Design
 
 PDK : Is a set of libraries and associated data to design in a particular technology. It is a interface between FAB and designers. A PDK contains following information
 *  Transistors
@@ -108,7 +109,66 @@ docker
 ./flow.tcl -interactive
 # The above command will invoke openLane in interactive mode. Without -interactive mode the tool attempts to complete the flow in one run
 # %:Represents openlane terminal
-%package require openlane 0.9
+% package require openlane 0.9
+
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a
+ls -ltr 
+# ------------------------------------------------------------------------
+# config.tcl                     : Openlane configuration file used for design configuration. Redefines default settings of the tool.
+# src                            : Directory where Verilog and SDC files will be included.
+# sky130A_sky130_fd_sc_hd_config.tcl : Custom TCL file, sourced inside config.tcl.
+# ------------------------------------------------------------------------
+
+% prep -design picorv32a
+# Results in Screenshot 1
+# Prepares designs and reads config.tcl. Creates Runs directory
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/01-12_18-18
+ls -ltr
+# ------------------------------------------------------------------------
+# cmds.log                       : Log file that records all commands run.
+# config.tcl                     : Default parameters taken by the run.
+# logs                           : Contains logs from each stage of the process.
+# reports                        : Timing reports generated from each stage.
+# results                        : Output results from each Openlane stage.
+# tmp                            : Temporary files are stored during the run.
+# ------------------------------------------------------------------------
+%run_synthesis
+# Results in Screenshot 2
+# ------------------------------------------------------------------------
+# Runs Yosys and ABC (Logic Mapping and Optimization)
+#
+# Yosys: Open-source synthesis tool that takes high-level RTL code (e.g., Verilog)
+#        and converts it into a gate-level netlist. It performs various optimization
+#        tasks, including synthesis, technology mapping, and formal verification.
+#
+# ABC: A tool for logic synthesis, optimization, and technology mapping. It is often
+#      used after Yosys to further optimize the netlist generated and map it to a 
+#      specific technology library
+#
+# In this step, Yosys synthesizes the RTL code, and ABC performs additional mapping
+# to the target library, ensuring that the design meets the desired area, timing,
+# and power requirements. This process is crucial for preparing the design for
+# further stages in the ASIC flow, such as place and route.
+# ------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------
+# Results directory will have the synthesized netlist file: picorv32a.synthesis.v
+# Path to the results directory:
+# cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/01-12_18-18/results/synthesis
+#
+# Timing reports from the synthesis stage can be found in the reports directory.
+# Path to the reports directory:
+# cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/01-12_18-18/reports/synthesis
+# ------------------------------------------------------------------------
 
 ```
+
+Screenshot 1 :
+<img width="461" alt="image" src="https://github.com/user-attachments/assets/cf377477-7efd-45ea-acbc-95805e451455">
+
+Screenshot 2 :
+<img width="476" alt="image" src="https://github.com/user-attachments/assets/cb2443d8-8757-47cf-8130-b921eaa4d59e">
+
+
 </details>
+Smaller Designs we can run without interactive mode but for larger designs we need to explore each and every design to check if everything is meeting the requirement.
