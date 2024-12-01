@@ -48,3 +48,48 @@ Goal of openlane tool is to produce a clean GDSII with no human intervention.
 
 Day1 : Practicals 
 
+<details>
+  <summary>Click to expand the Bash code</summary>
+  
+```bash
+cd ~
+cd Desktop/work/tools/openlane_working_dir/pdks
+ls -l
+# ------------------------------------------------------------------------
+# open_pdks  : Script that makes commercial PDKs compatible with open-source tools.
+# skywater-pdk : PDK compatible with commercial EDA tools.
+# sky130A       : Open-source PDK designed to be compatible with open-source EDA tools.
+# ------------------------------------------------------------------------
+cd sky130A
+# ------------------------------------------------------------------------
+# libs.ref  : Contains Liberty, LEF, and other files specific to the technology.
+# libs.tech : Contains files specific to EDA tools, e.g., Magic, KLayout, etc.
+# ------------------------------------------------------------------------
+cd libs.ref/sky130_fd_sc_hd
+ls
+# ------------------------------------------------------------------------
+# cdl      : Circuit Description Language files (netlist format).
+# doc      : Documentation related to the PDK or design.
+# gds      : GDSII files containing layout data.
+# lef      : Library Exchange Format files describing layout abstracts.
+# lib      : Liberty files for timing, power, and area characterization.
+# mag      : Magic layout files.
+# maglef   : Magic layout files with LEF abstraction.
+# spice    : SPICE netlist files for simulation.
+# techlef  : Technology-specific LEF files.
+# verilog  : Verilog HDL files for design and simulation.
+# ------------------------------------------------------------------------
+# ------------------------------------------------------------------------
+# irsim      : Digital circuit simulator for switch-level simulation.
+# klayout    : Open-source layout viewer and editor.
+# magic      : Open-source VLSI layout tool.
+# netgen     : LVS (Layout vs. Schematic) and netlist comparison tool.
+# ngspice    : Open-source SPICE simulator for analog and mixed-signal circuits.
+# openlane   : Open-source RTL-to-GDS flow for digital design.
+# qflow       : Complete open-source digital synthesis flow.
+# xcircuit   : Schematic capture tool and netlist generator.
+# xschem     : Schematic capture tool with SPICE integration.
+# ------------------------------------------------------------------------
+
+```
+</details>
