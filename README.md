@@ -239,6 +239,7 @@ ls -ltr
 Floorplan generated at this can be viewed with magic or klayout tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 Screenshot 3 :
+
 <img width="539" alt="image" src="https://github.com/user-attachments/assets/a733c80d-e0d2-42be-ae5e-97dff5bdcd9b">
 
 | **Shortcut/Action**        | **Description**                                                                 |
@@ -263,4 +264,22 @@ Screenshot 3 :
 HPWL : Half parameter wire length
 
 Screeshot 4 :
+
 <img width="533" alt="image" src="https://github.com/user-attachments/assets/9a6b9468-2e32-4b2d-9e80-60e5b4398ca1">
+
+**IO Placer Revision**
+This example shows how to change a switch and rerun the openalane task iteratively to obtain the optimal results.
+
+IO Placer is one of the opensource EDA tools which is used to place IO's around the core. The tool supports 4 pin placement strategy.
+Inside openalane/configuration directory we have readme.md file which has brief description of all the switches.
+So let us try to change the pin placement strategy in this example. FP_IO_MODE is a switch that decided the mode of IO placement. Default option of this variable can be observed in floorplan.tcl
+In the openalane terminal
+%set :env(FP_IO_MODE) 2
+%run_floorplan
+
+Observe the results the in the results directory of floorplan (Screenshot 5)
+Screenshot 5:
+<img width="355" alt="image" src="https://github.com/user-attachments/assets/6e75229b-5e30-431f-8c44-927bde34ce6a">
+
+
+
