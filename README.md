@@ -230,7 +230,8 @@ cd 01-12_18-18/logs/floorplan
 #Grep for config variables read by the tool
 cd 01-12_18-18/results/floorplan
 ls -ltr
-```bash
+```
+
 Floorplan generated at this can be viewed with magic or klayout tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 
