@@ -267,6 +267,16 @@ Screeshot 4 :
 
 <img width="533" alt="image" src="https://github.com/user-attachments/assets/9a6b9468-2e32-4b2d-9e80-60e5b4398ca1">
 
+Results :
+cd /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/05-12_16-52/results/placement
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+
+Placement DEF View :
+
+<img width="355" alt="image" src="https://github.com/user-attachments/assets/363301a3-4774-417f-9293-2da0c320c104">
+
+
+
 **IO Placer Revision**
 This example shows how to change a switch and rerun the openalane task iteratively to obtain the optimal results.
 
@@ -279,6 +289,7 @@ In the openalane terminal
 
 Observe the results the in the results directory of floorplan (Screenshot 5)
 Screenshot 5:
+
 <img width="355" alt="image" src="https://github.com/user-attachments/assets/6e75229b-5e30-431f-8c44-927bde34ce6a">
 
 
