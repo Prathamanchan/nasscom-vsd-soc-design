@@ -224,17 +224,43 @@ Steps to run floorplan using openlane (page 8)
 ```bash
 %run_floorplan
 #Results in Screenshot 3
+#Run Global Placement
+%run_placement 
+#Results in Screenshot 4
 #Review floorplan files on command line
 cd /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs
 cd 01-12_18-18/logs/floorplan
 #Grep for config variables read by the tool
 cd 01-12_18-18/results/floorplan
 ls -ltr
+#Review floorplan files on command line
 ```
-
+**Floorplan**
 Floorplan generated at this can be viewed with magic or klayout tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
-
+Screenshot 3 :
 <img width="539" alt="image" src="https://github.com/user-attachments/assets/a733c80d-e0d2-42be-ae5e-97dff5bdcd9b">
 
+| **Shortcut/Action**        | **Description**                                                                 |
+|----------------------------|--------------------------------------------------------------------------------|
+| **S**                       | Select                                                                          |
+| **V**                       | Fit the layout                                                                  |
+| **Left and Right Click Mouse** | Select the area                                                              |
+| **Z**                       | Zoom                                                                            |
+| **?what**                   | Magic command: Displays the selected metal layer in the terminal                 |
 
+### Things to Note at the Floorplan Stage
+
+- **Standard Cells**:  
+  Standard cells are not placed at this stage. You can observe all the cells in the lower-left corner.
+
+- **Tap Cells**:  
+  Tap cells are placed at equidistant intervals in the core area. They connect the n-well to VDD and the substrate to ground, helping to avoid latch-up.
+
+**Placement**
+- Global Placement
+- Detailed Placement
+HPWL : Half parameter wire length
+
+Screeshot 4 :
+<img width="533" alt="image" src="https://github.com/user-attachments/assets/9a6b9468-2e32-4b2d-9e80-60e5b4398ca1">
