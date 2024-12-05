@@ -221,6 +221,19 @@ These are IP's readily available in the market. Example Memory, Clock gating cel
 Surround pre-placed cells with Decoupling capacitors. These decap cells power the block during switching activity.
 
 Steps to run floorplan using openlane (page 8)
+```bash
+%run_floorplan
+#Results in Screenshot 3
+#Review floorplan files on command line
+cd /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs
+cd 01-12_18-18/logs/floorplan
+#Grep for config variables read by the tool
+cd 01-12_18-18/results/floorplan
+ls -ltr
+```bash
+Floorplan generated at this can be viewed with magic or klayout tool
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 
+<img width="539" alt="image" src="https://github.com/user-attachments/assets/a733c80d-e0d2-42be-ae5e-97dff5bdcd9b">
 
 
