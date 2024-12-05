@@ -273,7 +273,8 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 Placement DEF View :
 
-<img width="355" alt="image" src="https://github.com/user-attachments/assets/363301a3-4774-417f-9293-2da0c320c104">
+<img width="713" alt="image" src="https://github.com/user-attachments/assets/4bb353d9-48e6-4f0f-a083-9f878ccd40fc">
+
 
 
 
