@@ -293,5 +293,16 @@ Screenshot 5:
 
 <img width="355" alt="image" src="https://github.com/user-attachments/assets/6e75229b-5e30-431f-8c44-927bde34ce6a">
 
-
+ Clone custom inverter standard cell design from github repository
+ ```bash
+cd Desktop/work/tools/openlane_working_dir/openlane
+# Clone the repository with custom inverter design
+git clone https://github.com/nickson-jose/vsdstdcelldesign
+cd vsdstdcelldesign
+cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech .
+magic -T sky130A.tech sky130_inv.mag &
+#Screenshot 6
+```
+Screenshot 6 :
+<img width="377" alt="image" src="https://github.com/user-attachments/assets/272fcdb7-7358-4d46-b6cf-b192eb3cbf94">
 
