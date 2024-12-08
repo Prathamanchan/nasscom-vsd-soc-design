@@ -373,6 +373,7 @@ Enter ":" on magic layout view to switch to commandline mode in Magic and select
 <img width="353" alt="image" src="https://github.com/user-attachments/assets/9f9ee31b-57af-40a6-80ae-4951f807ec43">
 
 :sif see via4
+
 The above command will display the VIA in the VIA layer which is generally not visible in the tool. Helpful in resolving DRC-Metaloverlap errors. To undo the same type
 :feed clear
 
@@ -382,3 +383,16 @@ The above command will display the VIA in the VIA layer which is generally not v
 Can be used to measure bbox of selected region. It can also be used as a scale, as shown in below diagarm
 
 <img width="360" alt="image" src="https://github.com/user-attachments/assets/f054f77d-7afa-47dd-84c2-7161315d9c58">
+
+:load poly        #Will load poly.mag
+
+<img width="552" alt="image" src="https://github.com/user-attachments/assets/2543c4d5-32c5-4760-a862-a4db09f9ed8b">
+
+**Fixing DRC between Poly and Polyresistor**
+<img width="308" alt="image" src="https://github.com/user-attachments/assets/20b46b89-5346-4dec-92ed-14edd11f0e1a">
+
+Update Poly.9 DRC rule in sy130A.tech, load the tech file in magic and rerun DRC (Commands are enclosed in below snippet)
+Now we could observe the spacing DRC.
+
+<img width="697" alt="image" src="https://github.com/user-attachments/assets/3a46ebb3-0899-4bc8-9330-529f71f963ba">
+
