@@ -313,6 +313,7 @@ Screenshot 6 :
 <img width="377" alt="image" src="https://github.com/user-attachments/assets/272fcdb7-7358-4d46-b6cf-b192eb3cbf94">
 
 </details>
+
 # Day 3 : Introduction to Magic and ngspice
 <details>
   <summary>Practicals</summary>
