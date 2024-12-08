@@ -242,6 +242,7 @@ Screenshot 3 :
 
 <img width="539" alt="image" src="https://github.com/user-attachments/assets/a733c80d-e0d2-42be-ae5e-97dff5bdcd9b">
 
+? : Represents commands to be run on magic commandline
 | **Shortcut/Action**        | **Description**                                                                 |
 |----------------------------|--------------------------------------------------------------------------------|
 | **S**                       | Select                                                                          |
@@ -250,6 +251,7 @@ Screenshot 3 :
 | **Z**                       | Zoom                                                                            |
 | **?what**                   | Magic command: Displays the selected metal layer in the terminal                 |
 | **ss**                   | Shows connectivitity of the selected object                                        |
+| **?box**                       | Dimension of Selected object                                                  |
 
 ### Things to Note at the Floorplan Stage
 
@@ -318,3 +320,13 @@ Screenshot 6 :
 #Enable parasitic extraction
 %ext2spice
 #Extract netlist
+
+Simulating the Generated netlist :
+<img width="377" alt="image" src="https://github.com/user-attachments/assets/09fbee8d-f788-43d9-9ea8-48982eb25b1e">
+
+#plot output vs input transient Screenhot 7
+ngspice 1 -> plot y vs time a 
+
+<img width="604" alt="image" src="https://github.com/user-attachments/assets/48eed693-d0ae-40a8-80bf-4d787f65e7ca">
+
+
