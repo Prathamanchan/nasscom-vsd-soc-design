@@ -249,6 +249,7 @@ Screenshot 3 :
 | **Left and Right Click Mouse** | Select the area                                                              |
 | **Z**                       | Zoom                                                                            |
 | **?what**                   | Magic command: Displays the selected metal layer in the terminal                 |
+| **ss**                   | Shows connectivitity of the selected object                                        |
 
 ### Things to Note at the Floorplan Stage
 
@@ -306,3 +307,14 @@ magic -T sky130A.tech sky130_inv.mag &
 Screenshot 6 :
 <img width="377" alt="image" src="https://github.com/user-attachments/assets/272fcdb7-7358-4d46-b6cf-b192eb3cbf94">
 
+ Lab introduction to Sky130 basic layers layout and LEF using inverter
+
+ Reference : https://github.com/nickson-jose/vsdstdcelldesign
+ Extract Spice netlist on ngspice terminal
+ %pwd
+ %extract all
+ #Generates Extracted netlist *.ext
+ %ext2spice cthresh 0 rthresh 0
+#Enable parasitic extraction
+%ext2spice
+#Extract netlist
