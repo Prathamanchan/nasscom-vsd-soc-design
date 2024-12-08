@@ -252,6 +252,7 @@ Screenshot 3 :
 | **Shift+Z**                       | Zoom Out                                                                     |
 | **?what**                   | Magic command: Displays the selected metal layer in the terminal                 |
 | **ss**                   | Shows connectivitity of the selected object                                        |
+| **g**                   | Enable or Disable Grid                                        |
 | **?box**                       | Dimension of Selected object                                                  |
 
 ### Things to Note at the Floorplan Stage
@@ -409,5 +410,24 @@ drc style drc(full)
 #Changes DRC style to Full
 ```
 
-#Sky130 Day 4 : Pre-Layout timing analysis and importance of good clock tree
-##Timing modeling using delay table
+# Sky130 Day 4 : Pre-Layout timing analysis and importance of good clock tree
+## Timing modeling using delay table
+
+Guidelines for PNR tool
+* inputs and output port must lie on the intersection of vertical and horizontal tracks
+* Width of the cell should be odd multiple of track pitch and Height should be odd multiple of track vertical pitch
+
+The tracks.info file in OpenLane is used to provide information about the track definitions for routing in a physical design. This file plays a critical role in ensuring that the tools involved in the place-and-route (PnR) process understand the grid and track alignment of the standard cells and routing layers. Information used during routing stage.
+
+tracks.info path : /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tracks.info
+
+<img width="344" alt="image" src="https://github.com/user-attachments/assets/267d88e4-0900-4e2c-afe5-6c59f8961b7e">
+
+<img width="551" alt="image" src="https://github.com/user-attachments/assets/24476f8f-856b-4511-8314-75e11c804567">
+
+Refer : https://github.com/nickson-jose/vsdstdcelldesign
+Define Label pins and Ports for the layout and generate LEF
+
+<img width="709" alt="image" src="https://github.com/user-attachments/assets/a499e17a-5cfd-4ba9-8d7d-6e3a0e6952b1">
+
+
