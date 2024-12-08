@@ -62,6 +62,9 @@
 
 # Day 1 : Inception of OpenSource EDA, Openlane and Sky130 PDK
 
+<details>
+  <summary>Theory</summary>
+
 <img width="359" alt="image" src="https://github.com/user-attachments/assets/cd204ce1-22b8-4874-b087-c1f28368286e">
 
 RTL, EDA Tools and PDK are three key ingredients of ASIC Design
@@ -78,7 +81,7 @@ OpenLane is an automated RTL to GDSII flow. The flow performs full ASIC implemen
 OpenLane is based on several opensource projects such as OpenRoad, magic, klayout, fualt, yosys and Qflow etc.
 Goal of openlane tool is to produce a clean GDSII with no human intervention.
 
-## Day1 : Practicals 
+</details>
 
 <details>
   <summary>OpenLane Directory Structure</summary>
