@@ -458,6 +458,8 @@ docker
 >package require openlane 0.9
 >prep -design picorv32a 
 # Additional commands to include newly added lef to openlane flow
+#included our lef in merged lef. that means pnr selects our cell
+#/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/08-12_14-37/tmp/merged.lef
 >set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
 >add_lefs -src $lefs
 >run_synthesis
@@ -465,4 +467,72 @@ docker
 <img width="434" alt="image" src="https://github.com/user-attachments/assets/26195f71-90af-424c-97a9-68cfff6870cc">
 
 Run ended with huge slack and violation has to be fixed
+
+```bash
+# Now once again we have to prep design so as to update variables
+prep -design picorv32a -tag 08-12_14-37 -overwrite
+
+# Addiitional commands to include newly added lef to openlane flow merged.lef
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+# Command to display current value of variable SYNTH_STRATEGY
+echo $::env(SYNTH_STRATEGY)
+
+# Command to set new value for SYNTH_STRATEGY
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+
+# adds buffer to high fanout nets ensuring less delay and compensating area
+echo $::env(SYNTH_BUFFERING)
+
+# Controls sizing of gates to meet delay
+echo $::env(SYNTH_SIZING)
+
+# Command to set new value for SYNTH_SIZING
+set ::env(SYNTH_SIZING) 1
+
+# Command to display current value of variable SYNTH_DRIVING_CELL to check whether it's the proper cell or not
+echo $::env(SYNTH_DRIVING_CELL)
+
+# Now that the design is prepped and ready, we can run synthesis using following command
+run_synthesis
+```
+Area before : Chip area for module '\picorv32a': 147712.918400
+Area after : Chip area for module '\picorv32a': 181730.544000
+Area increase because of change in strategy.
+Results of the run :
+
+<img width="459" alt="image" src="https://github.com/user-attachments/assets/2206df1b-365e-4fb8-a820-756283082181">
+
+%run_floorplan
+Failed with below error message:
+
+<img width="605" alt="image" src="https://github.com/user-attachments/assets/c0b43363-cb47-47fd-9c58-3ed87bef363b">
+
+To resolve the error followed the steps mentioned in https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd?tab=readme-ov-file
+
+'''bash
+Since we are facing unexpected un-explainable error while using run_floorplan command, we can instead use the following set of commands available based on information from Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands/floorplan.tcl and also based on Floorplan Commands section in Desktop/work/tools/openlane_working_dir/openlane/docs/source/OpenLANE_commands.md
+
+# Follwing commands are all together sourced in "run_floorplan" command
+init_floorplan
+place_io
+tap_decap_or
+```
+
+<img width="466" alt="image" src="https://github.com/user-attachments/assets/be4d305c-713a-49e1-a6d4-e7ca55588c2e">
+
+%run_placement
+#Screenshot of Placement run
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def
+
+Custom Cell was found in a DEF view
+
+<img width="538" alt="image" src="https://github.com/user-attachments/assets/e37728a8-433e-447b-8e37-4be603b9842d">
+
+
+
+<img width="536" alt="image" src="https://github.com/user-attachments/assets/cae7ea08-32b4-4833-9183-52f75e09ffea">
+
+
 
