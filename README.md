@@ -418,7 +418,7 @@ drc style drc(full)
 </details>
 
 
-# Sky130 Day 4 : Pre-Layout timing analysis and importance of good clock tree
+# Day 4 : Pre-Layout timing analysis and importance of good clock tree
 <details>
   <summary>Practicals</summary>
   
@@ -552,9 +552,9 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 
 
+
+
 </details>
-
-
 
 
 
