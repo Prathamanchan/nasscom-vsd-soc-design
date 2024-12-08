@@ -329,4 +329,10 @@ ngspice 1 -> plot y vs time a
 
 <img width="604" alt="image" src="https://github.com/user-attachments/assets/48eed693-d0ae-40a8-80bf-4d787f65e7ca">
 
+Measuring Rise/Fall Transition :
+<img width="612" alt="image" src="https://github.com/user-attachments/assets/b1f8f317-4481-4f02-9c8b-518804447da9">
+
+
+
+
 
