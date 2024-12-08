@@ -248,7 +248,8 @@ Screenshot 3 :
 | **S**                       | Select                                                                          |
 | **V**                       | Fit the layout                                                                  |
 | **Left and Right Click Mouse** | Select the area                                                              |
-| **Z**                       | Zoom                                                                            |
+| **Left and Right Click Mouse** | Select the area                                                              |
+| **Shift+Z**                       | Zoom Out                                                                     |
 | **?what**                   | Magic command: Displays the selected metal layer in the terminal                 |
 | **ss**                   | Shows connectivitity of the selected object                                        |
 | **?box**                       | Dimension of Selected object                                                  |
@@ -329,6 +330,7 @@ ngspice 1 -> plot y vs time a
 
 <img width="604" alt="image" src="https://github.com/user-attachments/assets/48eed693-d0ae-40a8-80bf-4d787f65e7ca">
 
+Library Characterization : 
 Measuring Rise/Fall Transition :
 
 <img width="612" alt="image" src="https://github.com/user-attachments/assets/b1f8f317-4481-4f02-9c8b-518804447da9">
@@ -341,6 +343,42 @@ Fall Delay : Delay from 50% of input to 50% of output when the output is falling
 <img width="498" alt="image" src="https://github.com/user-attachments/assets/5855e2d9-1a93-46b5-9e9a-f84c01c2c9fb">
 
 
+Magic Tutorials, Fixing DRC etc
 
+DRM of Sky130 : https://skywater-pdk.readthedocs.io/en/main/rules/periphery.html
 
+```bash
+# Change to home directory
+cd
+# Command to download the lab files
+wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
+# Since lab file is compressed command to extract it
+tar xfz drc_tests.tgz
+# Change directory into the lab folder
+cd drc_tests
+# List all files and directories present in the current directory
+ls -al
+# Command to view .magicrc file, loads automatically when magic is opened
+gvim .magicrc
+# Command to open magic tool in better graphics
+magic -d XR &
+#Open met3.mag
+```
+The white patches are the DRC Errors highlighted by the tool
 
+<img width="353" alt="image" src="https://github.com/user-attachments/assets/80515054-7ceb-44e8-9dd1-1120b31b93e4">
+
+Enter ":" on magic layout view to switch to commandline mode in Magic and select the area that has drc error and enter "drc why". This will dispaly a brief description of the error.
+
+<img width="353" alt="image" src="https://github.com/user-attachments/assets/9f9ee31b-57af-40a6-80ae-4951f807ec43">
+
+:sif see via4
+The above command will display the VIA in the VIA layer which is generally not visible in the tool. Helpful in resolving DRC-Metaloverlap errors. To undo the same type
+:feed clear
+
+<img width="210" alt="image" src="https://github.com/user-attachments/assets/d7068fd5-9a18-4f3d-945e-2bc9e3a1a025">
+
+:box 
+Can be used to measure bbox of selected region. It can also be used as a scale, as shown in below diagarm
+
+<img width="360" alt="image" src="https://github.com/user-attachments/assets/f054f77d-7afa-47dd-84c2-7161315d9c58">
