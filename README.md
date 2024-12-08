@@ -430,4 +430,39 @@ Define Label pins and Ports for the layout and generate LEF
 
 <img width="709" alt="image" src="https://github.com/user-attachments/assets/a499e17a-5cfd-4ba9-8d7d-6e3a0e6952b1">
 
+## Adding our custom cell in openlane flow
+
+Copy the generated LEF and it's dotlibs to the src directory. 
+```bash
+cd /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src
+cp ../../../vsdstdcelldesign/inv_anchan.lef .
+cp ../../../vsdstdcelldesign/libs/sky130_fd_sc_hd__* .
+mv inv_anchan.lef sky130_vsdinv.lef
+#Replace inv_anchan with sky130_vsdinv inside LEF
+```
+Commands to be added to config.tcl to include our custom cell in the openlane flow
+```bash
+set ::env(LIB_SYNTH) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
+set ::env(LIB_FASTEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__fast.lib"
+set ::env(LIB_SLOWEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__slow.lib"
+set ::env(LIB_TYPICAL) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
+
+set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
+```
+<img width="436" alt="image" src="https://github.com/user-attachments/assets/02353e45-a318-4119-926d-7a6d1dce9505">
+
+```bash
+cd /Desktop/work/tools/openlane_working_dir/openlane
+docker
+>./flow.tcl -interactive
+>package require openlane 0.9
+>prep -design picorv32a 
+# Additional commands to include newly added lef to openlane flow
+>set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+>add_lefs -src $lefs
+>run_synthesis
+```
+<img width="434" alt="image" src="https://github.com/user-attachments/assets/26195f71-90af-424c-97a9-68cfff6870cc">
+
+Run ended with huge slack and violation has to be fixed
 
