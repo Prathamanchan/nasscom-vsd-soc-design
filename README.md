@@ -211,6 +211,9 @@ Smaller Designs we can run without interactive mode but for larger designs we ne
 </details>
 
 # Day 2 : Good floorplan vs bad floorplan and intro to libcells
+<details>
+  <summary>Practicals</summary>
+  
 A 'Die' which consists of core is small semiconductor material specimen on which fundamental circuit is fabricated.
 In an ideal scenario we prefer utilization factor of 0.5 or 0.6
 
@@ -281,8 +284,6 @@ Placement DEF View :
 <img width="713" alt="image" src="https://github.com/user-attachments/assets/4bb353d9-48e6-4f0f-a083-9f878ccd40fc">
 
 
-
-
 **IO Placer Revision**
 This example shows how to change a switch and rerun the openalane task iteratively to obtain the optimal results.
 
@@ -311,7 +312,11 @@ magic -T sky130A.tech sky130_inv.mag &
 Screenshot 6 :
 <img width="377" alt="image" src="https://github.com/user-attachments/assets/272fcdb7-7358-4d46-b6cf-b192eb3cbf94">
 
- Lab introduction to Sky130 basic layers layout and LEF using inverter
+</details>
+# Day 3 : Introduction to Magic and ngspice
+<details>
+  <summary>Practicals</summary>
+## Lab introduction to Sky130 basic layers layout and LEF using inverter
 
  Reference : https://github.com/nickson-jose/vsdstdcelldesign
  Extract Spice netlist on ngspice terminal
@@ -409,8 +414,13 @@ Now we could observe the spacing DRC.
 drc style drc(full)
 #Changes DRC style to Full
 ```
+</details>
+
 
 # Sky130 Day 4 : Pre-Layout timing analysis and importance of good clock tree
+<details>
+  <summary>Practicals</summary>
+  
 ## Timing modeling using delay table
 
 Guidelines for PNR tool
@@ -539,6 +549,9 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 <img width="536" alt="image" src="https://github.com/user-attachments/assets/701097aa-1b34-4b3a-bb77-dba68bbf30a6">
 
+
+
+</details>
 
 
 
