@@ -511,7 +511,7 @@ Failed with below error message:
 
 To resolve the error followed the steps mentioned in https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd?tab=readme-ov-file
 
-'''bash
+```bash
 Since we are facing unexpected un-explainable error while using run_floorplan command, we can instead use the following set of commands available based on information from Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands/floorplan.tcl and also based on Floorplan Commands section in Desktop/work/tools/openlane_working_dir/openlane/docs/source/OpenLANE_commands.md
 
 # Follwing commands are all together sourced in "run_floorplan" command
@@ -524,15 +524,23 @@ tap_decap_or
 
 %run_placement
 #Screenshot of Placement run
+<img width="536" alt="image" src="https://github.com/user-attachments/assets/cae7ea08-32b4-4833-9183-52f75e09ffea">
+
+*To view the results go to*
+cd /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/08-12_14-37/results/placement
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def
 
-Custom Cell was found in a DEF view
+#Custom Cell was found in a DEF view
 
 <img width="538" alt="image" src="https://github.com/user-attachments/assets/e37728a8-433e-447b-8e37-4be603b9842d">
 
+%expand
+#To view the Abstract view in magic
+
+<img width="536" alt="image" src="https://github.com/user-attachments/assets/701097aa-1b34-4b3a-bb77-dba68bbf30a6">
 
 
-<img width="536" alt="image" src="https://github.com/user-attachments/assets/cae7ea08-32b4-4833-9183-52f75e09ffea">
+
 
 
 
