@@ -396,12 +396,18 @@ Now we could observe the spacing DRC.
 
 <img width="697" alt="image" src="https://github.com/user-attachments/assets/3a46ebb3-0899-4bc8-9330-529f71f963ba">
 
-Incorrectly implemented difftap.2 simple rule correction
+**Incorrectly implemented difftap.2 simple rule correction**
 
 <img width="692" alt="image" src="https://github.com/user-attachments/assets/fcca84a7-aadb-4f5f-8822-2abdfc0b0cf9">
 
-Incorrectly implemented nwell.4 complex rule correction
+**Incorrectly implemented nwell.4 complex rule correction**
 
 <img width="719" alt="image" src="https://github.com/user-attachments/assets/35b71732-cb45-4c03-9803-4740bda8b6df">
 
+```bash
+drc style drc(full)
+#Changes DRC style to Full
+```
 
+#Sky130 Day 4 : Pre-Layout timing analysis and importance of good clock tree
+##Timing modeling using delay table
